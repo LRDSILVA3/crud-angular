@@ -1,0 +1,33 @@
+{
+  "products": [
+    {
+      "id": 2,
+      "name": "Notebook Mac Pro",
+      "price": "10000.00"
+    },
+    {
+      "id": 3,
+      "name": "Samsung S20+",
+      "price": 1200.89
+    },
+    {
+      "name": "Faca",
+      "price": "12.3",
+      "id": 4
+    }
+  ],
+  "client": [
+    {
+      "id": 1,
+      "name": "Lucas Rafael",
+      "cpf": "113.923.009-32",
+      "dateNascim": "15/09/2000"
+    },
+    {
+      "cpf": "123.456.789-11",
+      "dateNascim": "31/07/2003",
+      "name": "Giovana",
+      "id": 2
+    }
+  ]
+}

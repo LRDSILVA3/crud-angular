@@ -1,0 +1,38 @@
+<mat-card>
+  <mat-card-title>
+      Novo Cliente
+  </mat-card-title>
+  <form>
+      <mat-form-field>
+          <input matInput placeholder="Nome"
+          [(ngModel)]="client.name"name="name">
+
+      </mat-form-field>
+
+
+      <mat-form-field>
+          <input matInput placeholder="Cpf"
+          [(ngModel)]="client.cpf" name="cpf">
+
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput placeholder="Data de Nascimento"
+        [(ngModel)]="client.dateNascim" name="Date">
+
+    </mat-form-field>
+
+  </form>
+
+
+
+
+
+<button mat-raised-button (click)="createClient()" color="primary">
+  Salvar
+</button>
+
+<button mat-raised-button (click)="cancel()" >
+  Cancelar
+</button>
+</mat-card>

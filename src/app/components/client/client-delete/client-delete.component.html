@@ -1,0 +1,35 @@
+<mat-card>
+  <mat-card-title>
+      Confirmar Exclusão do Cliente
+  </mat-card-title>
+  <form>
+      <mat-form-field>
+          <input matInput placeholder="Nome"
+          [value]="client.name"name="name" disabled>
+
+      </mat-form-field>
+
+      <mat-form-field>
+          <input matInput placeholder="Cpf"
+          [value]="client.cpf" name="cpf" disabled>
+
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Data Nascimento"
+        [value]="client.dateNascim" name="dateNascim" disabled>
+
+    </mat-form-field>
+  </form>
+
+
+
+
+
+<button mat-raised-button (click)="deleteProduct()" color="warn">
+  Excluir
+</button>
+
+<button mat-raised-button (click)="cancel()" >
+  Cancelar
+</button>
+</mat-card>
