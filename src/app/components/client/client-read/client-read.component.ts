@@ -9,7 +9,7 @@ import { ClientService } from '../client.service';
 })
 export class ClientReadComponent implements OnInit {
   clients!: Client[]
-  displayedColumns = ['id','name','cpf','dateNascim','action']
+  displayedColumns = ['id','name','cpf','dateNascim','cellNumber','action']
    constructor(private clientService: ClientService) { }
 
 

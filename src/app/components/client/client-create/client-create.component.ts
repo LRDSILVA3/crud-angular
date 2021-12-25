@@ -12,7 +12,8 @@ export class ClientCreateComponent implements OnInit {
   client: Client= {
     cpf: '',
     dateNascim: '',
-    name: ''
+    name: '',
+    cellNumber: ''
   }
   constructor(private clientService: ClientService,private router:Router) { }
 

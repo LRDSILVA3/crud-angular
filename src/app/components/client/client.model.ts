@@ -3,4 +3,5 @@ export interface Client{
   name: string
   cpf: string
   dateNascim: string
+  cellNumber: string
 }
