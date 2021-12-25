@@ -2,13 +2,13 @@
   "products": [
     {
       "id": 2,
-      "name": "Notebook Mac Pro",
+      "name": "Notebook Mac ",
       "price": "12000.00"
     },
     {
-      "id": 3,
-      "name": "Samsung S20+",
-      "price": 1200.89
+      "name": "Xiomi MI5",
+      "price": "1500",
+      "id": 3
     }
   ],
   "client": [
@@ -17,10 +17,10 @@
       "name": "Lucas Rafael",
       "cpf": "113.923.009-32",
       "dateNascim": "15/09/2000",
-      "cellNumber": "(45) 9 8810-9099"
+      "cellNumber": "(99)99999-9999"
     },
     {
-      "cpf": "123.456.789-11",
+      "cpf": "999.999.999-99",
       "dateNascim": "31/07/2003",
       "name": "Giovana",
       "id": 2,
@@ -34,10 +34,10 @@
       "cellNumber": "(45) 9 8810-9099"
     },
     {
-      "cpf": "161.615.161-61",
-      "dateNascim": "15/01/2000",
-      "name": "Lucas Natã",
-      "cellNumber": "(45) 98810-9099",
+      "cpf": "999.999.999-99",
+      "dateNascim": "99/99/9999",
+      "name": "Gonçalo",
+      "cellNumber": "(99) 99999-9999",
       "id": 4
     }
   ]
