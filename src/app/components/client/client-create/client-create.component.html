@@ -5,20 +5,20 @@
   <form>
       <mat-form-field>
           <input matInput placeholder="Nome"
-          [(ngModel)]="client.name"name="name">
+          [(ngModel)]="client.name" name="name">
 
       </mat-form-field>
 
 
       <mat-form-field>
           <input matInput placeholder="Cpf"
-          [(ngModel)]="client.cpf" name="cpf">
+          [(ngModel)]="client.cpf" name="cpf" mask="000.000.000-00">
 
       </mat-form-field>
 
       <mat-form-field>
         <input matInput placeholder="Data de Nascimento"
-        [(ngModel)]="client.dateNascim" name="Date">
+        [(ngModel)]="client.dateNascim" name="Date" mask="00/00/0000">
 
     </mat-form-field>
 

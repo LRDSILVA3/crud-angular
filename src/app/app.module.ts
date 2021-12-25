@@ -32,7 +32,7 @@ import { ClientCreateComponent } from './components/client/client-create/client-
 import { ClientCrudComponent } from './views/client-crud/client-crud.component';
 import { ClientDeleteComponent } from './components/client/client-delete/client-delete.component';
 import { ClientUpdateComponent } from './components/client/client-update/client-update.component';
-
+import {NgxMaskModule} from 'ngx-mask';
 
 registerLocaleData(localePT)
 @NgModule({
@@ -71,6 +71,9 @@ registerLocaleData(localePT)
     MatFormFieldModule,
     MatInputModule,
     MatTableModule,
+    NgxMaskModule.forRoot({
+      dropSpecialCharacters:false //Ao salvar, mantera a mascara
+    })
   ],
 
   providers: [{
