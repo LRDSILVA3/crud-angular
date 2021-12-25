@@ -1,7 +1,7 @@
 import { HeaderService } from './header.service';
 import { Component, OnInit } from '@angular/core';
 
-import { HeaderData } from '../footer/header-data.model';
+import { HeaderData } from './header-data.model';
 
 @Component({
   selector: 'app-header',

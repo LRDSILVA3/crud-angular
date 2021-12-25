@@ -31,6 +31,7 @@ import { ProductDeleteComponent } from './components/product/product-delete/prod
 import { ClientCreateComponent } from './components/client/client-create/client-create.component';
 import { ClientCrudComponent } from './views/client-crud/client-crud.component';
 import { ClientDeleteComponent } from './components/client/client-delete/client-delete.component';
+import { ClientUpdateComponent } from './components/client/client-update/client-update.component';
 
 
 registerLocaleData(localePT)
@@ -51,6 +52,7 @@ registerLocaleData(localePT)
     ClientReadComponent,
     ClientCrudComponent,
     ClientDeleteComponent,
+    ClientUpdateComponent,
 
 
   ],

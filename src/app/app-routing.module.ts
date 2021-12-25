@@ -10,10 +10,11 @@ import {ProductCrudComponent} from './views/product-crud/product-crud.component'
 import {ProductCreateComponent} from'./components/product/product-create/product-create.component'
 import { ClientCrudComponent } from './views/client-crud/client-crud.component';
 import { ClientDeleteComponent } from './components/client/client-delete/client-delete.component';
+import { ClientUpdateComponent } from './components/client/client-update/client-update.component';
 
 
 const routes: Routes = [{
-  path:" ",
+  path:"",
   component:HomeComponent
 },
 {
@@ -47,6 +48,10 @@ component:ProductCreateComponent
     {
       path:"client/delete/:id",
       component: ClientDeleteComponent
+    },
+    {
+      path:"client/update/:id",
+      component: ClientUpdateComponent
     },
 ];
 
