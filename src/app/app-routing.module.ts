@@ -11,6 +11,7 @@ import {ProductCreateComponent} from'./components/product/product-create/product
 import { ClientCrudComponent } from './views/client-crud/client-crud.component';
 import { ClientDeleteComponent } from './components/client/client-delete/client-delete.component';
 import { ClientUpdateComponent } from './components/client/client-update/client-update.component';
+import { SalesComponent } from './views/sales/sales.component';
 
 
 const routes: Routes = [{
@@ -52,6 +53,10 @@ component:ProductCreateComponent
     {
       path:"client/update/:id",
       component: ClientUpdateComponent
+    },
+    {
+      path:"sales",
+      component: SalesComponent
     },
 ];
 

@@ -33,6 +33,7 @@ import { ClientCrudComponent } from './views/client-crud/client-crud.component';
 import { ClientDeleteComponent } from './components/client/client-delete/client-delete.component';
 import { ClientUpdateComponent } from './components/client/client-update/client-update.component';
 import {NgxMaskModule} from 'ngx-mask';
+import { SalesComponent } from './views/sales/sales.component';
 
 registerLocaleData(localePT)
 @NgModule({
@@ -53,6 +54,7 @@ registerLocaleData(localePT)
     ClientCrudComponent,
     ClientDeleteComponent,
     ClientUpdateComponent,
+    SalesComponent,
 
 
   ],
