@@ -6,25 +6,25 @@
   <form>
       <mat-form-field>
           <input matInput placeholder="Nome"
-          [(ngModel)]="client.name"name="name">
+          [(ngModel)]="client.name"name="name" required>
 
       </mat-form-field>
 
       <mat-form-field>
           <input matInput placeholder="CPF"
-          [(ngModel)]="client.cpf" name="cpf"  mask="000.000.000-00">
+          [(ngModel)]="client.cpf" name="cpf" required mask="000.000.000-00">
 
       </mat-form-field>
 
       <mat-form-field>
         <input matInput placeholder="Data de Nascimento"
-        [(ngModel)]="client.dateNascim" name="Date">
+        [(ngModel)]="client.dateNascim" name="Date" required>
 
     </mat-form-field>
 
     <mat-form-field>
       <input matInput placeholder="Telefone"
-      [(ngModel)]="client.cellNumber" name="cellNumber" mask="(00)00000-0000">
+      [(ngModel)]="client.cellNumber" name="cellNumber" required mask="(00)00000-0000">
 
   </mat-form-field>
 

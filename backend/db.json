@@ -1,23 +1,33 @@
 {
   "products": [
     {
-      "id": 2,
-      "name": "Notebook Mac ",
-      "price": "12000.00"
-    },
-    {
       "name": "Xiomi MI5",
       "price": "1500",
       "id": 3
+    },
+    {
+      "name": "Caneta",
+      "price": "10",
+      "id": 4
+    },
+    {
+      "name": "Tijolo",
+      "price": "5",
+      "id": 5
+    },
+    {
+      "name": "TESTE",
+      "price": "1",
+      "id": 7
     }
   ],
   "client": [
     {
       "id": 1,
-      "name": "Lucas Rafael",
+      "name": "Lucas",
       "cpf": "113.923.009-32",
       "dateNascim": "15/09/2000",
-      "cellNumber": ""
+      "cellNumber": "(99)99999-9999"
     },
     {
       "cpf": "999.999.999-99",
