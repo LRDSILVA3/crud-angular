@@ -2,38 +2,33 @@
   <mat-card-title>
       Novo Cliente
   </mat-card-title>
-  <form>
-      <mat-form-field>
-          <input matInput placeholder="Nome"
-          [(ngModel)]="client.name" name="name">
-
-      </mat-form-field>
-
-
-      <mat-form-field>
-          <input matInput placeholder="Cpf"
-          [(ngModel)]="client.cpf" name="cpf" mask="000.000.000-00">
-
-      </mat-form-field>
-
-      <mat-form-field>
-        <input matInput placeholder="Data de Nascimento"
-        [(ngModel)]="client.dateNascim" name="Date" mask="00/00/0000">
-
-    </mat-form-field>
-
+  <form name="product" [formGroup]="clientForm" class="form">
     <mat-form-field>
-      <input matInput placeholder="Telefone"
-      [(ngModel)]="client.cellNumber" name="cellNumber" mask="(00) 00000-0000">
+      <input matInput name="name" formControlName="name" type="name" placeholder="Nome"
+      required>
 
   </mat-form-field>
 
+  <mat-form-field>
+    <input matInput name="cpf" formControlName="cpf" type="name" placeholder="CPF" mask="000.000.000-00"
+    required>
+
+</mat-form-field>
+
+<mat-form-field>
+  <input matInput name="dataNasc" formControlName="dataNasc" type="date" placeholder="Data de Nascimento"
+  required>
+
+</mat-form-field>
+
+<mat-form-field>
+  <input matInput name="phoneNumber" formControlName="phoneNumber" type="nome" placeholder="Telefone" mask="(00) 00000-0000"
+  required>
+
+</mat-form-field>
+
 
   </form>
-
-
-
-
 
 <button mat-raised-button (click)="createClient()" color="primary">
   Salvar

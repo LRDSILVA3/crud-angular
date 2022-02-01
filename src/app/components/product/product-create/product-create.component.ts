@@ -4,6 +4,7 @@ import{Router} from '@angular/router';
 import { Observable, EMPTY} from 'rxjs';
 import{Product} from './../product.model';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 
 @Component({
@@ -12,11 +13,15 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   styleUrls: ['./product-create.component.css']
 })
 export class ProductCreateComponent implements OnInit {
-product: Product= {
-  name:'',
-  price: ''
-}
-  constructor(private productService: ProductService,private router:Router,private snackBar: MatSnackBar) { }
+
+public productForm: FormGroup = new FormGroup({
+  name: new FormControl('',[Validators.required]),
+  price: new FormControl('',[Validators.required]),
+  quantity: new FormControl('',[Validators.required]),
+
+});
+  constructor(private productService: ProductService,private router:Router,private snackBar: MatSnackBar,public form: FormBuilder,
+    public snackbar: MatSnackBar,) { }
   showMessage(msg: string, isError: boolean = false): void {
     this.snackBar.open(msg, 'X', {
       duration: 3000,
@@ -27,12 +32,12 @@ product: Product= {
   ngOnInit(): void {
 
   }
-createProduct():void{
-  if((this.product.name == "") || (this.product.price == "")){
-
+createProduct(){
+  if(!this.productForm.value.name || !this.productForm.value.price || !this.productForm.value.quantity){
 this.errorRegister();
+return;
 }else{
-  this.productService.create(this.product).subscribe(() =>{
+  this.productService.create(this.productForm.value).subscribe(() =>{
 
     this.productService.showMessage('Produto Criado');
     this.router.navigate(['/products'])

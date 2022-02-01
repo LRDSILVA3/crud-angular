@@ -3,18 +3,25 @@
     <mat-card-title>
         Novo Produto
     </mat-card-title>
-    <form>
+    <form name="product" [formGroup]="productForm" class="form">
         <mat-form-field>
-            <input matInput placeholder="Nome"
-            [(ngModel)]="product.name"name="name" required>
+            <input matInput name="name" formControlName="name" type="name" placeholder="Nome"
+            required>
 
         </mat-form-field>
 
         <mat-form-field>
-            <input matInput placeholder="Preço R$"
-            [(ngModel)]="product.price" name="price" required>
+          <input matInput name="price" formControlName="price" type="price" placeholder="Preço R$"
+          required>
 
-        </mat-form-field>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput name="quantity" formControlName="quantity" type="number" placeholder="Quantidade"
+        required>
+
+    </mat-form-field>
+
     </form>
 
 

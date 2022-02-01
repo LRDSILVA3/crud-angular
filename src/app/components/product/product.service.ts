@@ -9,7 +9,7 @@ import { map, catchError } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class ProductService {
-  baseUrl = "http://localhost:3001/products"
+  baseUrl = "http://localhost:3333/products"
   constructor(private snackBar: MatSnackBar, private http: HttpClient) { }
 
   showMessage(msg: string, isError: boolean = false): void {
@@ -20,7 +20,7 @@ export class ProductService {
       panelClass: isError ? ['msg-error'] : ['msg-success']
     })};
 
-  create(product: Product): Observable<Product> {
+  create(product:any): Observable<Product> {
     return this.http.post<Product>(this.baseUrl, product).pipe(
       map((obj) => obj),
       catchError(e => this.errorHandler(e))
