@@ -1,0 +1,11 @@
+<mat-form-field style="width: 100%;">
+  <mat-select #select [placeholder]="placeholder" [formControl]="control" [multiple]="multiple">
+      <mat-option *ngIf="hasSelectAll" [value]="0" (onSelectionChange)="onToggleAll()"> Todos </mat-option>
+      <ng-container *ngFor="let item of options">
+          <mat-option [value]="item.value" [disabled]="item.disable">{{ item.label }}</mat-option>
+      </ng-container>
+  </mat-select>
+  <mat-error *ngIf="control?.hasError('required')">
+      Este campo é <strong>obrigatório</strong>
+  </mat-error>
+</mat-form-field>

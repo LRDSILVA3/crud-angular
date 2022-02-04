@@ -34,6 +34,7 @@ import { ClientUpdateComponent } from './components/client/client-update/client-
 import {NgxMaskModule} from 'ngx-mask';
 import { SalesComponent } from './views/sales/sales.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatPaginatorModule } from '@angular/material/paginator';
 registerLocaleData(localePT)
 @NgModule({
   declarations: [
@@ -56,6 +57,7 @@ registerLocaleData(localePT)
     SalesComponent,
   ],
   imports: [
+    MatPaginatorModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,

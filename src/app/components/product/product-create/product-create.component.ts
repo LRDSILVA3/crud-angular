@@ -1,5 +1,5 @@
 import { Component, ErrorHandler, OnInit } from '@angular/core';
-import { ProductService } from '../product.service';
+import { ProductService } from '../../../services/product.service';
 import{Router} from '@angular/router';
 import { Observable, EMPTY} from 'rxjs';
 import{Product} from './../product.model';

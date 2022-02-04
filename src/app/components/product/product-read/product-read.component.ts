@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from '../product.model';
-import { ProductService } from '../product.service';
+import { ProductService } from '../../../services/product.service';
 
 
 @Component({
@@ -11,7 +11,7 @@ import { ProductService } from '../product.service';
 export class ProductReadComponent implements OnInit {
 
  products!: Product[]
- displayedColumns = ['id','name','price','quantity','action']
+ displayedColumns = ['name','price','quantity','action'] //'id',
   constructor(private productService: ProductService) { }
 
   ngOnInit(): void {

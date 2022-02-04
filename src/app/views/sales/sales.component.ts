@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HeaderData } from './../../components/template/header/header-data.model';
-import { HeaderService } from './../../components/template/header/header.service';
+import { HeaderService } from './../../services/header.service';
 @Component({
   selector: 'app-sales',
   templateUrl: './sales.component.html',
