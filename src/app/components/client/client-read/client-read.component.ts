@@ -1,9 +1,8 @@
 import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { Client } from '../client.model';
 import { ClientService } from '../../../services/client.service';
-import {MatPaginator} from '@angular/material/paginator';
 import {MatTableDataSource} from '@angular/material/table';
-import {PageEvent} from '@angular/material/paginator';
+import { NgxSpinnerService } from 'ngx-spinner';
 @Component({
   selector: 'app-client-read',
   templateUrl: './client-read.component.html',
@@ -11,7 +10,7 @@ import {PageEvent} from '@angular/material/paginator';
 })
 
 export class ClientReadComponent implements OnInit{
-  constructor(private clientService: ClientService,) { }
+  constructor(private clientService: ClientService,private spinner:NgxSpinnerService) { }
   clients!: Client[];
   displayedColumns = ['name','cpf','dateNascim','cellNumber','action']; //'id',
   dataSource = new MatTableDataSource<Client>(this.clients);
@@ -21,10 +20,18 @@ export class ClientReadComponent implements OnInit{
 
 
    ngOnInit() : void {
+    this.spinner.show();
+
     this.clientService.read().subscribe(clients =>{
-      this.clients = clients
-      this.dataSource = new MatTableDataSource<Client>(this.clients);
-      this.length = this.dataSource.data.length;
+    this.clients = clients
+
+    setTimeout(() =>{
+    this.spinner.hide();
+
+    this.dataSource = new MatTableDataSource<Client>(this.clients);
+    this.length = this.dataSource.data.length;
+    }, 1300);
+
     })
   }
 
