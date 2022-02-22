@@ -21,7 +21,7 @@
       <!-- DateNasc Column-->
       <ng-container matColumnDef="dateNascim">
         <th mat-header-cell *matHeaderCellDef>Data Nascimento</th>
-        <td mat-cell *matCellDef="let row">{{row.dataNasc}}</td>
+        <td mat-cell *matCellDef="let row">{{row.dataNasc | date : 'dd/MM/yyyy'}}</td>
     </ng-container>
 
       <!-- Number Column-->

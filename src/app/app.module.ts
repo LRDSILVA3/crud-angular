@@ -35,6 +35,7 @@ import {NgxMaskModule} from 'ngx-mask';
 import { SalesComponent } from './views/sales/sales.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { SaleReadComponent } from './components/sale/sale-read/sale-read.component';
 registerLocaleData(localePT)
 @NgModule({
   declarations: [
@@ -55,6 +56,7 @@ registerLocaleData(localePT)
     ClientDeleteComponent,
     ClientUpdateComponent,
     SalesComponent,
+    SaleReadComponent,
   ],
   imports: [
     MatPaginatorModule,
