@@ -1,6 +1,8 @@
 import { HeaderData } from './../../components/template/header/header-data.model';
 import { HeaderService } from './../../services/header.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,ViewChild } from '@angular/core';
+import { ChartConfiguration, ChartEvent, ChartType } from 'chart.js';
+import { BaseChartDirective } from 'ng2-charts';
 
 @Component({
   selector: 'app-home',

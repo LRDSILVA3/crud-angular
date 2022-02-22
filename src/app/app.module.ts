@@ -33,9 +33,11 @@ import { ClientDeleteComponent } from './components/client/client-delete/client-
 import { ClientUpdateComponent } from './components/client/client-update/client-update.component';
 import {NgxMaskModule} from 'ngx-mask';
 import { SalesComponent } from './views/sales/sales.component';
+import { NgChartsModule } from 'ng2-charts';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { SaleReadComponent } from './components/sale/sale-read/sale-read.component';
+import { LineChartComponent } from './views/line-chart/line-chart.component';
 registerLocaleData(localePT)
 @NgModule({
   declarations: [
@@ -57,6 +59,7 @@ registerLocaleData(localePT)
     ClientUpdateComponent,
     SalesComponent,
     SaleReadComponent,
+    LineChartComponent,
   ],
   imports: [
     MatPaginatorModule,
@@ -75,6 +78,7 @@ registerLocaleData(localePT)
     MatInputModule,
     MatTableModule,
     NgxSpinnerModule,
+    NgChartsModule,
     NgxMaskModule.forRoot({
       dropSpecialCharacters:false //Ao salvar, mantera a mascara
     }),
