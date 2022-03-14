@@ -21,7 +21,7 @@ export class ProductReadComponent implements OnInit {
       setTimeout(() =>{
         this.spinner.hide();
         this.products = products
-    }, 1300);
+    }, 800);
     })
   }
 

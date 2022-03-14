@@ -20,8 +20,7 @@ public productForm: FormGroup = new FormGroup({
   quantity: new FormControl('',[Validators.required]),
 
 });
-  constructor(private productService: ProductService,private router:Router,private snackBar: MatSnackBar,public form: FormBuilder,
-    public snackbar: MatSnackBar,) { }
+  constructor(private productService: ProductService,private router:Router,private snackBar: MatSnackBar,public form: FormBuilder) { }
   showMessage(msg: string, isError: boolean = false): void {
     this.snackBar.open(msg, 'X', {
       duration: 3000,

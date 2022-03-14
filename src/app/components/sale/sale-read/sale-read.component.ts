@@ -29,7 +29,7 @@ export class SaleReadComponent implements OnInit {
         this.spinner.hide();
       this.dataSource = new MatTableDataSource<Sale>(this.sales);
       this.length = this.dataSource.data.length;
-    }, 1300);
+    }, 800);
     });
   }
 

@@ -1,4 +1,20 @@
-.flex-item{
-  width: 900px;
-  height: 500px;
+.container{
+  margin-top: 10px;
+  display: flex;
+  justify-content:center;
+}
+td{
+  margin-left: 5px;
+}
+.tdEspaco{
+  display: table;
+  float: left;
+  margin-right:26px;
+
+}
+.trEspaco{
+  display: table;
+  float:left;
+  margin-right:5px;
+
 }

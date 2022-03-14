@@ -30,7 +30,7 @@ export class ClientReadComponent implements OnInit{
 
     this.dataSource = new MatTableDataSource<Client>(this.clients);
     this.length = this.dataSource.data.length;
-    }, 1300);
+    }, 800);
 
     })
   }
