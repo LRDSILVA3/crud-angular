@@ -53,7 +53,7 @@ async drop(event: CdkDragDrop<string[] | any>) {
     //Se não mover certo
     let data:ProductOrder = event.container.data[0];
 
-    data.quantityOrder = 1;
+
     data.totalPrice = (parseFloat(data.price) * data.quantityOrder).toFixed(2);
 
     event.container.data[0] = data;
@@ -79,9 +79,11 @@ async drop(event: CdkDragDrop<string[] | any>) {
 }
 quantityOrder(event: ProductOrder, functionQuantity: string){
   if(functionQuantity === 'more'){
+    //Só posso adicionar se tiver em estoque
+    if(parseInt(event.quantity) > event.quantityOrder ){
     event.quantityOrder = event.quantityOrder + 1;
     event.totalPrice = (parseFloat(event.price) * event.quantityOrder).toFixed(2);
-
+    }
   }else{
     if(event.quantityOrder > 1){
     event.quantityOrder = event.quantityOrder - 1;
