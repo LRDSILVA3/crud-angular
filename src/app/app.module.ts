@@ -38,6 +38,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { SaleReadComponent } from './components/sale/sale-read/sale-read.component';
 import { LineChartComponent } from './views/line-chart/line-chart.component';
+import { SaleCreateModule } from './components/sale/sale-create/sale-create.module';
+
 registerLocaleData(localePT)
 @NgModule({
   declarations: [
@@ -79,6 +81,7 @@ registerLocaleData(localePT)
     MatTableModule,
     NgxSpinnerModule,
     NgChartsModule,
+    SaleCreateModule,
     NgxMaskModule.forRoot({
       dropSpecialCharacters:false //Ao salvar, mantera a mascara
     }),

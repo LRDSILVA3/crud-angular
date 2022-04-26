@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Product } from './../product.model';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { EMPTY, Observable } from 'rxjs';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-product-update',
@@ -14,7 +15,7 @@ export class ProductUpdateComponent implements OnInit {
   product!: Product;
   constructor(private productService: ProductService,
     private router: Router,
-    private route: ActivatedRoute,private snackBar: MatSnackBar) { }
+    private route: ActivatedRoute,private snackBar: MatSnackBar,private spinner:NgxSpinnerService) { }
 
     showMessage(msg: string, isError: boolean = false): void {
       this.snackBar.open(msg, 'X', {
@@ -24,16 +25,21 @@ export class ProductUpdateComponent implements OnInit {
         panelClass: isError ? ['msg-error'] : ['msg-success']
       })};
   ngOnInit(): void {
+    this.spinner.show();
     const id = this.route.snapshot.paramMap.get('id')
     this.productService.readById(id!).subscribe(product => {
-      this.product = product;
+      setTimeout(() =>{
+        this.spinner.hide();
+        this.product = product;
+    }, 800);
+
     })
   }
-  updateProduct(): void {
+  async updateProduct(): Promise<void> {
     if(!this.product.name || !this.product.price || !this.product.quantity){
       this.errorRegister();
     }else{
-    this.productService.update(this.product).subscribe(() => {
+    await this.productService.update(this.product).subscribe(() => {
       this.productService.showMessage('Produto atualizado com sucesso')
       this.router.navigate(['/products']);
     })

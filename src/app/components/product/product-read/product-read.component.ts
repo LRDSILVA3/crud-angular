@@ -12,12 +12,12 @@ import { NgxSpinnerService } from 'ngx-spinner';
 export class ProductReadComponent implements OnInit {
 
  products!: Product[]
- displayedColumns = ['name','price','quantity','action'] //'id',
+ displayedColumns = ['name','price','quantity','action'];
   constructor(private productService: ProductService,private spinner:NgxSpinnerService) { }
 
-  ngOnInit(): void {
+  async ngOnInit(): Promise<void> {
     this.spinner.show();
-    this.productService.read().subscribe(products =>{
+    await this.productService.read().subscribe(products =>{
       setTimeout(() =>{
         this.spinner.hide();
         this.products = products

@@ -27,13 +27,13 @@ export class ClientCreateComponent implements OnInit {
     })};
   ngOnInit(): void {
   }
-  createClient():void{
+  async createClient():Promise<void>{
     if(!this.clientForm.value.name || !this.clientForm.value.cpf ||
      !this.clientForm.value.phoneNumber && this.clientForm.value.dateNasc != 'dd/mm/aaaa'){
     this.errorRegister();
     return;
     }else{
-    this.clientService.create(this.clientForm.value).subscribe(() =>{
+    await this.clientService.create(this.clientForm.value).subscribe(() =>{
       this.clientService.showMessage('Cliente Criado');
       this.router.navigate(['/client'])
 

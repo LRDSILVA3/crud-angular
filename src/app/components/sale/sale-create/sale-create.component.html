@@ -1,0 +1,59 @@
+<mat-card>
+  <mat-card-title>
+      Nova Venda
+  </mat-card-title>
+  <div class="selectClient">
+    <mat-form-field appearance="fill">
+      <mat-label>Cliente</mat-label>
+      <mat-select (ngModel)="clientControl" name="client">
+        <mat-option *ngFor="let client of selectClient" [value]="selectClient">
+          {{client.label}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <div class="tables">
+
+    <div cdkDropListGroup>
+      <div class="example-container">
+        <h2>Pedido</h2>
+
+        <div
+          cdkDropList
+          [cdkDropListData]="pedido"
+          class="example-list"
+          (cdkDropListDropped)="drop($event)">
+          <div class="example-box" *ngFor="let item of pedido" cdkDrag>
+            {{item.name}} <p></p> {{'Un:  R$'+item.price }}
+            <div class="arrow">
+              <p></p> Qnt:
+              <span class="material-icons" style="color:#05a10b;" (click)="quantityOrder(item,'reduce')">
+              arrow_left</span>
+              {{item.quantityOrder}}
+              <span class="material-icons" style="color:#05a10b;" (click)="quantityOrder(item,'more')">
+                arrow_right</span>
+            </div>
+           <p></p> {{'Total:  R$'+item.totalPrice }}
+          </div>
+        </div>
+      </div>
+
+      <div class="disponivel example-container ">
+        <h2>Disponíveis</h2>
+
+        <div
+          cdkDropList
+          [cdkDropListData]="disponiveis"
+          class="example-list"
+          (cdkDropListDropped)="drop($event)">
+          <div class="example-box" *ngFor="let item of disponiveis" cdkDrag>
+            {{item.name}} <p></p> {{'Un: R$'+item.price }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</mat-card>

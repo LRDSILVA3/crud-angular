@@ -19,10 +19,10 @@ export class ClientReadComponent implements OnInit{
   pageSizeOptions: number[] = [1, 2, 10, 100];
 
 
-   ngOnInit() : void {
+   async ngOnInit() : Promise<void> {
     this.spinner.show();
 
-    this.clientService.read().subscribe(clients =>{
+    await this.clientService.read().subscribe(clients =>{
     this.clients = clients
 
     setTimeout(() =>{

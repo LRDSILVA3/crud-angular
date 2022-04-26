@@ -19,10 +19,10 @@ export class SaleReadComponent implements OnInit {
   pageSize = 10;
   pageSizeOptions: number[] = [1,2,5,10];
 
-  ngOnInit(): void {
+  async ngOnInit(): Promise<void> {
     this.spinner.show();
 
-    this.saleService.read().subscribe(sales =>{
+    await this.saleService.read().subscribe(sales =>{
       this.sales = sales;
 
       setTimeout(() =>{

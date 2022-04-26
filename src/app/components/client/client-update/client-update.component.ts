@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Client } from './../client.model';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { EMPTY, Observable } from 'rxjs';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-client-update',
@@ -14,7 +15,7 @@ export class ClientUpdateComponent implements OnInit {
   client!: Client;
   constructor(private clientService: ClientService,
     private router: Router,
-    private route: ActivatedRoute,private snackBar: MatSnackBar) { }
+    private route: ActivatedRoute,private snackBar: MatSnackBar,private spinner:NgxSpinnerService) { }
 
     showMessage(msg: string, isError: boolean = false): void {
       this.snackBar.open(msg, 'X', {
@@ -24,10 +25,14 @@ export class ClientUpdateComponent implements OnInit {
         panelClass: isError ? ['msg-error'] : ['msg-success']
       })};
 
-  ngOnInit(): void {
+  async ngOnInit(): Promise<void> {
+    this.spinner.show();
     const id = this.route.snapshot.paramMap.get('id')
-    this.clientService.readById(id!).subscribe(client => {
+    await this.clientService.readById(id!).subscribe(client => {
+      setTimeout(() =>{
+        this.spinner.hide();
       this.client = client;
+    }, 800);
     })
   }
   updateClient(): void {

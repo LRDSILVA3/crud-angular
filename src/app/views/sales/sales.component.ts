@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { HeaderData } from './../../components/template/header/header-data.model';
 import { HeaderService } from './../../services/header.service';
 @Component({
@@ -9,7 +10,7 @@ import { HeaderService } from './../../services/header.service';
 export class SalesComponent implements OnInit {
 
 
-  constructor(private headerService: HeaderService ) {
+  constructor(private headerService: HeaderService,private router:Router ) {
     headerService.headerData={
       title:'Vendas',
       icon:'paid',
@@ -21,6 +22,9 @@ export class SalesComponent implements OnInit {
 
 
 ngOnInit(): void {
+}
+navigateToSaleCreate(){
+  this.router.navigate(['/sales/create'])
 }
 
 }

@@ -31,12 +31,12 @@ public productForm: FormGroup = new FormGroup({
   ngOnInit(): void {
 
   }
-createProduct(){
+async createProduct(){
   if(!this.productForm.value.name || !this.productForm.value.price || !this.productForm.value.quantity){
 this.errorRegister();
 return;
 }else{
-  this.productService.create(this.productForm.value).subscribe(() =>{
+  await this.productService.create(this.productForm.value).subscribe(() =>{
 
     this.productService.showMessage('Produto Criado');
     this.router.navigate(['/products'])

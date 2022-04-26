@@ -12,6 +12,8 @@ import { ClientCrudComponent } from './views/client-crud/client-crud.component';
 import { ClientDeleteComponent } from './components/client/client-delete/client-delete.component';
 import { ClientUpdateComponent } from './components/client/client-update/client-update.component';
 import { SalesComponent } from './views/sales/sales.component';
+import { SaleCreateComponent } from './components/sale/sale-create/sale-create.component';
+import { SaleCreateModule } from './components/sale/sale-create/sale-create.module';
 
 
 const routes: Routes = [{
@@ -57,6 +59,10 @@ component:ProductCreateComponent
     {
       path:"sales",
       component: SalesComponent
+    },
+    {
+      path:"sales/create",
+      component: SaleCreateComponent
     },
 ];
 
